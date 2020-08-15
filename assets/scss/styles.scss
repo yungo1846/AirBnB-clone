@@ -1,0 +1,107 @@
+@tailwind base;
+
+@tailwind components;
+
+// 1em = font-size, if font-size = 20px and 1em = 20px em은 제일 가까운 font-size와 연관
+// root em은 root font-size와 연관, root font-size의 default 값은 16px
+
+// 반응이 없는 경우에는 ctrl+shift+R로 새로고침
+.search-box{
+    transition: box-shadow .2s linear;
+}
+
+.nav_link {
+    @apply ml-6 border-b-2 border-white h-full flex items-center;
+    a {
+      @apply py-10 px-5;
+    }
+    &:hover {
+      @apply border-gray-600;
+    }
+}
+
+.btn_base{
+  @apply w-full border-2 font-semibold text-center rounded-md py-5 mb-3;
+}
+
+.btn_link {
+  @apply w-full border-2 font-semibold text-center py-3 rounded-lg text-lg text-white bg-red-500;
+}
+
+input, textarea, select{
+  @apply w-full border-2 font-semibold rounded-md py-3 mb-2 text-left border border-gray-600 px-5;
+  &:focus{
+    @apply outline-none border-teal-500;
+  }
+}
+
+textarea{
+  resize: none;
+  height: 100px;
+}
+
+select{
+  height: 50px;
+}
+
+form{
+  .input{
+    @apply mb-2;
+    &.has_error{
+      input{
+        @apply bg-red-200 border-red-600;
+        &:focus{
+          @apply border-red-400 border-2;
+        }
+      }
+    }
+  }
+}
+
+@keyframes messageFadeIn{
+  0%{
+    opacity: 0;
+    transform:translateY(-50px);
+  }
+  5%{
+    opacity: 1;
+    transform:translateY(50px);
+  }
+  95%{
+    opacity: 1;
+    transform:translateY(50px);
+  }
+  100%{
+    opacity: 0;
+    transform:translateY(-50px);
+  }
+}
+
+.message{
+  animation: messageFadeIn 5s ease-in-out forwards;
+  &.error{
+    @apply bg-red-600;
+  }
+  &.info{
+    @apply bg-blue-500;
+  }
+  &.success{
+    @apply bg-green-500
+  }
+  &.warning{
+    @apply bg-yellow-400;
+  }
+}
+
+.border-section{
+  @apply border-b border-gray-400 pb-8 mt-8;
+}
+
+.cal-grid{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap:10px;
+  justify-items: center;
+}
+
+@tailwind utilities;

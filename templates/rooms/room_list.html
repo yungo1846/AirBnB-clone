@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static i18n %}
+{% block page_title %}
+Home
+{% endblock page_title %}
+
+{% block content %}
+<div class="container mx-auto pb-10">
+    <div class="rounded-xl bg-gray-800 h-50vh -mx-40 mt-32 mb-16 bg-cover bg-center"
+        style="background-image:url({% static 'img/bg.jpeg' %});">
+
+    </div>
+
+    <div class="flex flex-wrap -mx-40 mb-10">
+        {% for room in rooms %}
+        {% include 'mixins/room_card.html' with room=room %}
+        {% endfor %}
+    </div>
+    <div class="flex item-center justify-center mx-auto container">
+        <!-- 장고의 filter 기능을 이용해서 view.py에서 수정하지 않고 로직을 사용할 수 있다.-->
+        <!-- django template 에서는 함수를 ()를 이용해 호출하지 않는다. 이름만으로 호출-->
+        {% if page_obj.has_previous %}
+        <a href="?page={{page_obj.previous_page_number}}" class="text-teal-500"><i class="fas fa-arrow-left"></i></a>
+        {% endif %}
+        <span class="mx-3 font-medium text-lg">{{page_obj.number}} of {{page_obj.paginator.num_pages}}</span>
+        {% if page_obj.has_next %}
+        <a href="?page={{page_obj.next_page_number}}" class="text-teal-500"><i class="fas fa-arrow-right"></i></a>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock content %}
