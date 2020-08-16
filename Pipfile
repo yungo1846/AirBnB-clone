@@ -16,6 +16,7 @@ django-dotenv = "*"
 requests = "*"
 pipenv-to-requirements = "*"
 psycopg2 = "==2.8.4"
+sentry-sdk = "*"
 
 [requires]
 python_version = "3.7"
