@@ -19,6 +19,7 @@ psycopg2 = "==2.8.4"
 sentry-sdk = "*"
 django-storages = "*"
 boto3 = "*"
+pip = "*"
 
 [requires]
 python_version = "3.7"
