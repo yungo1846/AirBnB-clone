@@ -15,6 +15,7 @@ django-seed = "*"
 django-dotenv = "*"
 requests = "*"
 pipenv-to-requirements = "*"
+psycopg2 = "==2.8.4"
 
 [requires]
 python_version = "3.7"
