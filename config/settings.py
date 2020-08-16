@@ -183,3 +183,11 @@ if not DEBUG:
         send_default_pii=True,
     )
 
+# .ebextensions -> 02-django.config의 명령어 번호는 의미 없음.
+# 03_createsu:
+#   command: "django-admin createsu"
+# 04_upgrade-pip:
+#   command: "pip install --upgrade pip"
+# 05_collectstatic:
+#   command: "django-admin collectstatic --noinput"
+
