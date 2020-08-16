@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "uen85a2zvn7j^-m(0b%1*bt1lc6k+7k7%i(q7dyt$_v#$46$_h"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True # bool(os.environ.get("DEBUG"))
+DEBUG = True  # bool(os.environ.get("DEBUG"))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".elasticbeanstalk.com"]
 
 
 # Application definition
@@ -100,7 +100,7 @@ else:
         "default": {
             "ENGINE": "django.db.backends.postgresql",
             "HOST": os.environ.get("RDS_HOST"),
-            "NAME": os.environ.get("RDS_NAME"),",
+            "NAME": os.environ.get("RDS_NAME"),
             "USER": os.environ.get("RDS_USER"),
             "PASSWORD": os.environ.get("RDS_PASSWORD"),
             "PORT": "5432",
