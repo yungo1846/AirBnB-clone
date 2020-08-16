@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET", "NTfF6fEHnYx^P6@HJx@K6M")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get("DEBUG"))
-ALLOWED_HOSTS = [".elasticbeanstalk.com"]
+ALLOWED_HOSTS = [".elasticbeanstalk.com", "127.0.0.1"]
 
 
 # Application definition
@@ -171,7 +171,7 @@ if not DEBUG:
     AWS_STORAGE_BUCKET_NAME = "airbnb-clone-yungo1846"
     AWS_AUTO_CREATE_BUCKET = True
     AWS_BUCKET_ACL = "public-read"
-
+    AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}  # file upload faster
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
 
