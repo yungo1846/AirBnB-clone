@@ -192,3 +192,8 @@ if not DEBUG:
 # 05_collectstatic:
 #   command: "django-admin collectstatic --noinput"
 
+# create random seed rooms, users, reviews and etc...
+#  03_seed_rooms:
+#    command: "python manage.py seed_rooms --number 50"
+#  04_seed_reviews:
+#    command: "python manage.py seed_reviews --number 50"
