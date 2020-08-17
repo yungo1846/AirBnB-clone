@@ -11,12 +11,15 @@ class Command(BaseCommand):
         amenities = [
             "Air conditioning",
             "Alarm clock, Balcony",
+            "Balcony",
             "Bathroom",
             "Bathtub",
             "Bed Linen",
             "Sofa",
             "Swimming pool",
             "TV",
+            "PC",
+            "Microwave",
         ]
         for a in amenities:
             Amenity.objects.create(name=a)
