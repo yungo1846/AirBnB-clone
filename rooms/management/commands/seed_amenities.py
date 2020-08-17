@@ -20,6 +20,7 @@ class Command(BaseCommand):
             "TV",
             "PC",
             "Microwave",
+            "Hair drier",
         ]
         for a in amenities:
             Amenity.objects.create(name=a)
