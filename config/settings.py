@@ -170,6 +170,7 @@ if not DEBUG:
     AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = "airbnb-clone-yungo1846"
     AWS_AUTO_CREATE_BUCKET = True
+    AWS_S3_REGION_NAME = "ap-northeast-2"
     AWS_BUCKET_ACL = "public-read"
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}  # file upload faster
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
