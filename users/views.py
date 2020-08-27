@@ -77,7 +77,8 @@ def complete_verification(request, key):
 
 def github_login(request):
     client_id = os.environ.get("GH_ID")
-    redirect_url = "http://127.0.0.1:8000/users/login/github/callback"
+    host_url = os.environ.get("HOST_URL")
+    redirect_url = f"{host_url}users/login/github/callback"
     return redirect(
         f"https://github.com/login/oauth/authorize?client_id={client_id}&redirect_url={redirect_url}&scope=read:user"
     )
@@ -148,7 +149,8 @@ def github_callback(request):
 
 def kakao_login(request):
     client_id = os.environ.get("KAKAO_ID")
-    redirect_uri = "http://127.0.0.1:8000/users/login/kakao/callback"
+    host_url = os.environ.get("HOST_URL")
+    redirect_uri = f"{host_url}users/login/kakao/callback"
     return redirect(
         f"https://kauth.kakao.com/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code"
     )
