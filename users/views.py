@@ -79,7 +79,7 @@ def github_login(request):
     client_id = os.environ.get("GH_ID")
     host_url = os.environ.get("HOST_URL")
     redirect_url = host_url + "/users/login/github/callback"
-    print(host_url)
+    print("yungo1846", host_url)
     return redirect(
         f"https://github.com/login/oauth/authorize?client_id={client_id}&redirect_url={redirect_url}&scope=read:user"
     )
